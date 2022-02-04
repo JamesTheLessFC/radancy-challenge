@@ -1,0 +1,331 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  min-width: 320px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+main {
+  padding: 0 1rem;
+}
+@media screen and (min-width: 36em) {
+  main {
+    padding: 0 2rem;
+  }
+}
+
+h1,
+h2 {
+  font-weight: 400;
+  color: #00945f;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+h1 + hr,
+h2 + hr {
+  width: 100px;
+  border: 1px solid #00945f;
+  margin-bottom: 1.5rem;
+}
+
+p {
+  color: #888888;
+  line-height: 180%;
+  font-size: 1rem;
+}
+
+h3 {
+  font-weight: 400;
+  color: #00945f;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  text-align: left;
+  font-size: 1.5rem;
+  margin-right: auto;
+}
+h3 + hr {
+  width: 100px;
+  border: 1px solid #00945f;
+  margin-bottom: 1.5rem;
+}
+
+nav {
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+nav a {
+  width: 50%;
+  max-width: 317px;
+}
+nav a > img {
+  width: 100%;
+}
+@media screen and (min-width: 48em) {
+  nav {
+    height: 7rem;
+    padding: 0 2rem;
+    justify-content: start;
+  }
+  nav a {
+    width: unset;
+    max-width: unset;
+  }
+  nav a img {
+    width: unset;
+  }
+}
+
+header {
+  max-width: 100%;
+  overflow: hidden;
+}
+header #header-photo-mobile {
+  width: 100%;
+}
+header #header-photo-desktop {
+  display: none;
+  width: 150%;
+}
+@media screen and (min-width: 36em) {
+  header #header-photo-mobile {
+    display: none;
+  }
+  header #header-photo-desktop {
+    display: block;
+  }
+}
+@media screen and (min-width: 48em) {
+  header #header-photo-desktop {
+    width: 125%;
+  }
+}
+@media screen and (min-width: 62em) {
+  header #header-photo-desktop {
+    width: 100%;
+  }
+}
+
+#intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#intro .button-link {
+  background-color: #e97300;
+  color: #fff;
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding: 0.5rem 1.5rem;
+  display: inline-block;
+  text-align: center;
+  margin: auto;
+  margin-top: 3rem;
+}
+#intro .button-link:hover {
+  background-color: #fd8f21;
+  cursor: pointer;
+}
+
+#advantages div:not(:last-child) {
+  border-bottom: 1px solid #888888;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+#advantages div > p > a {
+  color: #759b24;
+  display: flex;
+  align-items: center;
+}
+#advantages div > p > a > svg {
+  stroke: #759b24;
+  fill: none;
+  height: 1rem;
+  stroke-width: 10px;
+  margin-left: 0.5rem;
+}
+#advantages div > p > a:hover {
+  color: #628518;
+}
+#advantages div > p > a:hover > svg {
+  stroke: #628518;
+}
+@media screen and (min-width: 48em) {
+  #advantages {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #advantages div:not(:last-child) {
+    border-bottom: unset;
+    padding-bottom: unset;
+    margin-bottom: unset;
+  }
+  #advantages div:first-child,
+#advantages div:nth-child(2) {
+    margin-bottom: 4rem;
+  }
+  #advantages div {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #advantages div:nth-child(odd) {
+    border-right: 1px solid #888888;
+    padding-right: 2rem;
+  }
+  #advantages div:nth-child(even) {
+    padding-left: 2rem;
+  }
+}
+
+#home-loans {
+  background-color: #ebf7f5;
+  margin: 3rem 0;
+}
+#home-loans h3 {
+  color: #fff;
+  background-color: #00945f;
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+}
+#home-loans p {
+  padding: 1rem 0.75rem;
+  margin: 0;
+}
+@media screen and (min-width: 48em) {
+  #home-loans p {
+    padding: 1rem 3rem;
+  }
+}
+
+#quotes {
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 4rem;
+}
+#quotes figure:nth-child(2) {
+  margin: 2rem 0;
+}
+#quotes blockquote > p {
+  font-style: italic;
+  margin: 1rem 0;
+  position: relative;
+}
+#quotes blockquote > p .quote-symbol {
+  font-size: 16rem;
+  color: #eeeeee;
+  position: absolute;
+  top: 5rem;
+  left: 0;
+  z-index: -1;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+#quotes figcaption > p {
+  color: #00945f;
+}
+@media screen and (min-width: 25em) {
+  #quotes {
+    width: 60%;
+  }
+}
+@media screen and (min-width: 56em) {
+  #quotes {
+    display: flex;
+    width: 100%;
+    margin: 0 auto 7rem auto;
+    justify-content: space-between;
+  }
+  #quotes figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #quotes figure img {
+    margin: auto;
+    margin-top: 0;
+  }
+  #quotes figure figcaption {
+    margin-top: auto;
+  }
+  #quotes figure:first-child,
+#quotes figure:last-child {
+    width: 23%;
+  }
+  #quotes figure:nth-child(2) {
+    width: 35%;
+    margin: unset;
+  }
+}
+@media screen and (min-width: 62em) {
+  #quotes {
+    width: 90%;
+  }
+  #quotes figure:first-child,
+#quotes figure:last-child {
+    width: 20%;
+  }
+}
+
+footer {
+  border-top: 1px solid #00945f;
+  padding: 0 1rem;
+}
+footer ul {
+  display: flex;
+  margin: 2rem 0;
+}
+footer ul li > a > img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+footer ul li:not(:last-child) {
+  margin-right: 0.5rem;
+}
+footer p {
+  font-size: 0.75rem;
+  line-height: 120%;
+}
+footer p a {
+  text-decoration: underline;
+}
+footer p a:hover {
+  color: #312e2e;
+}
+footer p:last-child {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+footer p:last-child a {
+  font-weight: 700;
+  text-decoration: none;
+}
+@media screen and (min-width: 36em) {
+  footer {
+    padding: 0 2rem;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

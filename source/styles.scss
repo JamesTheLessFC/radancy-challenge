@@ -1,0 +1,354 @@
+// COLORS
+
+$primary-color: #00945f;
+$link-color: #759b24;
+$link-hover-color: #628518;
+$button-color: #e97300;
+$button-hover-color: #fd8f21;
+$text-color: #888888;
+$light-background-color: #ebf7f5;
+$extra-light-gray: #eeeeee;
+$dark-gray: rgb(49, 46, 46);
+$white: #fff;
+
+// MIXINS
+
+@mixin heading-1 {
+  font-weight: 400;
+  color: $primary-color;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  & + hr {
+    width: 100px;
+    border: 1px solid $primary-color;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@mixin heading-2 {
+  @include heading-1;
+  text-align: left;
+  font-size: 1.5rem;
+  margin-right: auto;
+}
+
+@mixin body {
+  color: $text-color;
+  line-height: 180%;
+  font-size: 1rem;
+}
+
+@mixin button {
+  background-color: $button-color;
+  color: $white;
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding: 0.5rem 1.5rem;
+  display: inline-block;
+  text-align: center;
+  &:hover {
+    background-color: $button-hover-color;
+    cursor: pointer;
+  }
+}
+
+// RESETS
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  min-width: 320px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+main {
+  padding: 0 1rem;
+  @media screen and (min-width: 36em) {
+    padding: 0 2rem;
+  }
+}
+
+h1,
+h2 {
+  @include heading-1;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  @include body;
+}
+
+h3 {
+  @include heading-2;
+}
+
+// NAV BAR
+
+nav {
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  a {
+    width: 50%;
+    max-width: 317px;
+    & > img {
+      width: 100%;
+    }
+  }
+  @media screen and (min-width: 48em) {
+    height: 7rem;
+    padding: 0 2rem;
+    justify-content: start;
+    a {
+      width: unset;
+      max-width: unset;
+      img {
+        width: unset;
+      }
+    }
+  }
+}
+
+// HEADER
+
+header {
+  max-width: 100%;
+  overflow: hidden;
+  #header-photo-mobile {
+    width: 100%;
+  }
+  #header-photo-desktop {
+    display: none;
+    width: 150%;
+  }
+  @media screen and (min-width: 36em) {
+    #header-photo-mobile {
+      display: none;
+    }
+    #header-photo-desktop {
+      display: block;
+    }
+  }
+  @media screen and (min-width: 48em) {
+    #header-photo-desktop {
+      width: 125%;
+    }
+  }
+  @media screen and (min-width: 62em) {
+    #header-photo-desktop {
+      width: 100%;
+    }
+  }
+}
+
+// INTRO SECTION
+
+#intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .button-link {
+    @include button;
+    margin: auto;
+    margin-top: 3rem;
+  }
+}
+
+// CITIZENS ADVANTAGE SECTION
+
+#advantages {
+  div:not(:last-child) {
+    border-bottom: 1px solid $text-color;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  div > p > a {
+    color: $link-color;
+    display: flex;
+    align-items: center;
+    & > svg {
+      stroke: $link-color;
+      fill: none;
+      height: 1rem;
+      stroke-width: 10px;
+      margin-left: 0.5rem;
+    }
+    &:hover {
+      color: $link-hover-color;
+      & > svg {
+        stroke: $link-hover-color;
+      }
+    }
+  }
+  @media screen and (min-width: 48em) {
+    display: flex;
+    flex-wrap: wrap;
+    div:not(:last-child) {
+      border-bottom: unset;
+      padding-bottom: unset;
+      margin-bottom: unset;
+    }
+    div:first-child,
+    div:nth-child(2) {
+      margin-bottom: 4rem;
+    }
+    div {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      &:nth-child(odd) {
+        border-right: 1px solid $text-color;
+        padding-right: 2rem;
+      }
+      &:nth-child(even) {
+        padding-left: 2rem;
+      }
+    }
+  }
+}
+
+// CITIZENS ONE HOME LOANS SECTION
+
+#home-loans {
+  background-color: $light-background-color;
+  margin: 3rem 0;
+  h3 {
+    color: $white;
+    background-color: $primary-color;
+    margin: 0;
+    padding: 1rem;
+    text-align: center;
+  }
+  p {
+    padding: 1rem 0.75rem;
+    margin: 0;
+  }
+  @media screen and (min-width: 48em) {
+    p {
+      padding: 1rem 3rem;
+    }
+  }
+}
+
+// QUOTES SECTION
+
+#quotes {
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 4rem;
+  figure:nth-child(2) {
+    margin: 2rem 0;
+  }
+  blockquote > p {
+    font-style: italic;
+    margin: 1rem 0;
+    position: relative;
+    .quote-symbol {
+      font-size: 16rem;
+      color: $extra-light-gray;
+      position: absolute;
+      top: 5rem;
+      left: 0;
+      z-index: -1;
+      font-family: Georgia, "Times New Roman", Times, serif;
+    }
+  }
+  figcaption > p {
+    color: $primary-color;
+  }
+  @media screen and (min-width: 25em) {
+    width: 60%;
+  }
+  @media screen and (min-width: 56em) {
+    display: flex;
+    width: 100%;
+    margin: 0 auto 7rem auto;
+    justify-content: space-between;
+    figure {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      img {
+        margin: auto;
+        margin-top: 0;
+      }
+      figcaption {
+        margin-top: auto;
+      }
+    }
+    figure:first-child,
+    figure:last-child {
+      width: 23%;
+    }
+    figure:nth-child(2) {
+      width: 35%;
+      margin: unset;
+    }
+  }
+  @media screen and (min-width: 62em) {
+    width: 90%;
+    figure:first-child,
+    figure:last-child {
+      width: 20%;
+    }
+  }
+}
+
+// FOOTER
+
+footer {
+  border-top: 1px solid $primary-color;
+  padding: 0 1rem;
+  ul {
+    display: flex;
+    margin: 2rem 0;
+    li > a > img {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+    li:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+  }
+  p {
+    font-size: 0.75rem;
+    line-height: 120%;
+    a {
+      text-decoration: underline;
+      &:hover {
+        color: $dark-gray;
+      }
+    }
+    &:last-child {
+      margin-top: 1rem;
+      margin-bottom: 3rem;
+      a {
+        font-weight: 700;
+        text-decoration: none;
+      }
+    }
+  }
+  @media screen and (min-width: 36em) {
+    padding: 0 2rem;
+  }
+}
